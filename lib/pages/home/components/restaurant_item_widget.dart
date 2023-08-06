@@ -9,18 +9,21 @@ class RestaurantItemWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Stack(
-      alignment: Alignment.topCenter,
+      alignment: Alignment.bottomCenter,
       children: [
         //widget 1
-        Image.asset(
-          item.imageAddress,
-          fit: BoxFit.fill,
-          width: double.infinity,
+        Padding(
+          padding: const EdgeInsets.only(bottom: 52),
+          child: Image.asset(
+            item.imageAddress,
+            fit: BoxFit.fill,
+            width: double.infinity,
+          ),
         ),
 
         //widget 2
         Container(
-            margin: const EdgeInsets.only(top: 80, left: 25, right: 25),
+            margin: const EdgeInsets.only( left: 12, right: 12),
             decoration: BoxDecoration(
                 color: Colors.white, borderRadius: BorderRadius.circular(12)),
             child: Padding(

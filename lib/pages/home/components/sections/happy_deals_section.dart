@@ -26,7 +26,7 @@ class HappyDealsSection extends StatelessWidget {
         Padding(
           padding: EdgeInsets.only(left: Dt.d_24, top: Dt.d_8),
           child: SizedBox(
-            height: (MediaQuery.sizeOf(context).width / 2.2),
+            height: (MediaQuery.sizeOf(context).width / 2.1),
             child: ListView.separated(
               padding: EdgeInsets.only(right: Dt.d_24),
               separatorBuilder: (context, index) => const SizedBox(
