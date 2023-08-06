@@ -11,4 +11,10 @@ class RouteNamed{
   static const String forgotPasswordVerifyOtpPage = 'forgotPasswordVerifyOtpPage';
   static const String forgotPasswordSavePage = 'forgotPasswordSavePage';
   static const String notifySaveSuccessPage = 'notifySaveSuccessPage';
+  static const String profilePage = 'profilePage';
+  static const String aboutUsPage = 'aboutUsPage';
+  static const String changePasswordPage = 'changePasswordPage';
+  static const String reservationHistoryPage = 'reservationHistoryPage';
+  static const String reviewPage = 'reviewPage';
+  static const String happyDealDetailPage = 'happyDealDetailPage';
 }

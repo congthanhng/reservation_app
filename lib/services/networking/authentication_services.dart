@@ -1,4 +1,5 @@
 import 'package:reservation_app/data/user_model.dart';
+import 'package:reservation_app/services/local_storage/app_shared_preference.dart';
 
 class AuthenticationServices {
   static Future<String?> onUserLogin(
@@ -17,11 +18,8 @@ class AuthenticationServices {
     //get data from server
     //user From json to return the UserModel
     await Future.delayed(const Duration(seconds: 1));
-    final mock = UserModel(
-      id: '01010101',
-      name: 'Lua Pham',
-      avatarPath: 'assets/images/images/avatar.png'
-    );
+
+    final mock = await AppSharedPreference.readUserInfo() ?? userModelMockData;
     return Future.value(mock);
   }
 }

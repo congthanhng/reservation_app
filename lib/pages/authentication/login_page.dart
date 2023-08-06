@@ -36,9 +36,10 @@ class _LoginPageState extends State<LoginPage> {
           listener: (context, state) {
             if (state is AuthLoginFailure) {
               ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
-                content: Text('Phone or Password is not correct!'),
+                content: Text(
+                    'Phone or Password is not correct! Test PW with: Cong@123'),
               ));
-            } else if(state is AuthLoginSuccess) {
+            } else if (state is AuthLoginSuccess) {
               ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
                 content: Text('You login Success!'),
               ));
@@ -63,7 +64,7 @@ class _LoginPageState extends State<LoginPage> {
                           child: Image.asset(AssetsManagement.logoWithText),
                         ),
                         Padding(
-                          padding: EdgeInsets.all(8),
+                          padding: const EdgeInsets.all(8),
                           child: ClipRRect(
                             borderRadius: BorderRadius.circular(10),
                             child: TextFormField(

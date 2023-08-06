@@ -15,10 +15,10 @@ class AuthenticationBloc
     on<AuthGetUserInfoEvent>(_onGetUserInfoEvent);
     on<AuthCheckLoginEvent>(_onCheckLoginEvent);
     on<AuthLogoutEvent>(_onLogoutEvent);
+    on<AuthInfoChanged>(_onInfoChanged);
   }
 
   _onLoginEvent(AuthLoginEvent event, Emitter<AuthenticationState> emit) async {
-    print('OKOKOK: ${event.phoneNumber} - ${event.password}');
     emit(AuthLoading());
     // Gọi API sau đó API trả về kết quả
     var token = await AuthenticationServices.onUserLogin(
@@ -51,10 +51,26 @@ class AuthenticationBloc
     }
   }
 
-  _onLogoutEvent(AuthLogoutEvent event, Emitter<AuthenticationState> emit) async {
-
-    AppSharedPreference.deleteAccessToken();
+  _onLogoutEvent(
+      AuthLogoutEvent event, Emitter<AuthenticationState> emit) async {
+    await AppSharedPreference.deleteAccessToken();
+    await AppSharedPreference.deleteUserInfo();
 
     emit(AuthLogoutState());
+  }
+
+  _onInfoChanged(
+      AuthInfoChanged event, Emitter<AuthenticationState> emit) async {
+    if (state is AuthLoginSuccess) {
+      var newState = state as AuthLoginSuccess;
+
+      var newData = newState.userData?.copyWith(
+          email: event.userModel.email,
+          phone: event.userModel.phone,
+          name: event.userModel.name);
+      await AppSharedPreference.writeUserInfo(newData);
+
+      emit(AuthLoginSuccess(userData: newData));
+    }
   }
 }

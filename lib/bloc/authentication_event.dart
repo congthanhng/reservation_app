@@ -10,12 +10,18 @@ class AuthLoginEvent extends AuthenticationEvent {
   AuthLoginEvent({required this.phoneNumber, required this.password});
 }
 
-class AuthGetUserInfoEvent extends AuthenticationEvent{
+class AuthGetUserInfoEvent extends AuthenticationEvent {
   final String accessToken;
 
   AuthGetUserInfoEvent({required this.accessToken});
 }
 
-class AuthCheckLoginEvent extends AuthenticationEvent{}
+class AuthCheckLoginEvent extends AuthenticationEvent {}
 
-class AuthLogoutEvent extends AuthenticationEvent{}
+class AuthLogoutEvent extends AuthenticationEvent {}
+
+class AuthInfoChanged extends AuthenticationEvent {
+  final UserModel userModel;
+
+  AuthInfoChanged({required this.userModel});
+}

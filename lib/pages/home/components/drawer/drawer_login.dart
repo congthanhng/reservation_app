@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:reservation_app/bloc/authentication_bloc.dart';
+import 'package:reservation_app/data/company_info_model.dart';
 import 'package:reservation_app/data/user_model.dart';
+import 'package:reservation_app/routes/route_named.dart';
 import 'package:reservation_app/utils/assets_management.dart';
 
 class DrawerLogin extends StatelessWidget {
@@ -60,8 +62,8 @@ class DrawerLogin extends StatelessWidget {
                           padding: const EdgeInsets.all(3.0),
                           child: InkWell(
                             onTap: () {
-                              // Navigator.pushNamed(
-                              //     context, PageName.signUpPage);
+                              Navigator.pushNamed(
+                                  context, RouteNamed.profilePage);
                             },
                             child: Container(
                                 width: MediaQuery.of(context).size.width / 2.8,
@@ -93,7 +95,7 @@ class DrawerLogin extends StatelessWidget {
                   children: [
                     InkWell(
                       onTap: () {
-                        // Navigator.pushNamed(context, PageName.homePage);
+                        Navigator.pop(context);
                       },
                       child: const Row(
                         mainAxisAlignment: MainAxisAlignment.start,
@@ -122,8 +124,8 @@ class DrawerLogin extends StatelessWidget {
                     ),
                     InkWell(
                       onTap: () {
-                        // Navigator.pushNamed(
-                        //     context, PageName.reservationPage);
+                        Navigator.pushNamed(
+                            context, RouteNamed.reservationHistoryPage);
                       },
                       child: const Row(
                         mainAxisAlignment: MainAxisAlignment.start,
@@ -131,13 +133,13 @@ class DrawerLogin extends StatelessWidget {
                         children: [
                           Padding(
                             padding: EdgeInsets.all(8.0),
-                            child: Icon(Icons.menu_outlined,
+                            child: Icon(Icons.history,
                                 size: 35, color: Color(0xFF9D170F)),
                           ),
                           Padding(
                             padding: EdgeInsets.all(8.0),
                             child: Text(
-                              'Reservation',
+                              'Reservation history',
                               style: TextStyle(
                                   color: Color(0xFF9D170F), fontSize: 18),
                             ),
@@ -152,8 +154,8 @@ class DrawerLogin extends StatelessWidget {
                     ),
                     InkWell(
                         onTap: () {
-                          // Navigator.pushNamed(
-                          //     context, PageName.changePassPage);
+                          Navigator.pushNamed(
+                              context, RouteNamed.changePasswordPage);
                         },
                         child: const Row(
                             mainAxisAlignment: MainAxisAlignment.start,
@@ -180,8 +182,7 @@ class DrawerLogin extends StatelessWidget {
                     ),
                     InkWell(
                       onTap: () {
-                        // Navigator.pushNamed(
-                        //     context, PageName.aboutUsPage);
+                        Navigator.pushNamed(context, RouteNamed.aboutUsPage);
                       },
                       child: const Row(
                         mainAxisAlignment: MainAxisAlignment.start,
@@ -241,14 +242,17 @@ class DrawerLogin extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.end,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text(company.name,
+                  Text(companyInfoMockData.name,
                       style: const TextStyle(
                           fontWeight: FontWeight.w600, fontSize: 15)),
-                  Text(company.address, style: const TextStyle(fontSize: 15)),
-                  Text(company.gpk, style: const TextStyle(fontSize: 15)),
-                  Text(company.phoneNumber,
+                  Text(companyInfoMockData.address,
                       style: const TextStyle(fontSize: 15)),
-                  Text(company.email, style: const TextStyle(fontSize: 15)),
+                  Text(companyInfoMockData.gpk,
+                      style: const TextStyle(fontSize: 15)),
+                  Text(companyInfoMockData.phoneNumber,
+                      style: const TextStyle(fontSize: 15)),
+                  Text(companyInfoMockData.email,
+                      style: const TextStyle(fontSize: 15)),
                 ],
               ),
             ),
@@ -258,26 +262,3 @@ class DrawerLogin extends StatelessWidget {
     );
   }
 }
-
-class Company {
-  String name;
-  String address;
-  String gpk;
-  String phoneNumber;
-  String email;
-
-  Company(
-    this.name,
-    this.address,
-    this.gpk,
-    this.phoneNumber,
-    this.email,
-  );
-}
-
-Company company = Company(
-    'Golden Gate Trading Service Joint Stock Company',
-    'Head office: No. 60 Pho Duc Chinh Street, Nguyen Thai Binh Ward, District 1, HCMC, Vietnam',
-    'GPK: 0102721191 issued on 09/04/2008',
-    'Tel: 043 222 3000',
-    'Email: support@anbbq.com.vn');
