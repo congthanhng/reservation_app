@@ -17,7 +17,7 @@ class OurRestaurantSection extends StatelessWidget {
           child: HeaderSection(
             title: 'Our restaurant',
             onTapSeeAll: () {
-              Navigator.pushNamed(context, RouteNamed.restaurantPage);
+              Navigator.pushNamed(context, RouteNamed.restaurantListPage);
 
             },
           ),

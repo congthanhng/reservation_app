@@ -15,6 +15,7 @@ import 'package:reservation_app/pages/not_found/not_found_page.dart';
 import 'package:reservation_app/pages/notification/notification_page.dart';
 import 'package:reservation_app/pages/onboarding/onboarding_page.dart';
 import 'package:reservation_app/pages/our_restaurant/our_restaurant_page.dart';
+import 'package:reservation_app/pages/restaurant/restaurant_page.dart';
 import 'package:reservation_app/pages/user/change_password_page.dart';
 import 'package:reservation_app/pages/user/profile_page.dart';
 import 'package:reservation_app/pages/user/reservation_history_page.dart';
@@ -48,7 +49,7 @@ class RouteManager {
             builder: (context) => const FoodCateroryPage(),
           );
         }
-      case RouteNamed.restaurantPage:
+      case RouteNamed.restaurantListPage:
         {
           return MaterialPageRoute(
             builder: (context) => const OurRestaurantPage(),
@@ -131,6 +132,12 @@ class RouteManager {
         {
           return MaterialPageRoute(
             builder: (context) => HappyDealDetailPage(),
+          );
+        }
+      case RouteNamed.restaurantPage:
+        {
+          return MaterialPageRoute(
+            builder: (context) => RestaurantPage(),
           );
         }
       default:

@@ -3,7 +3,7 @@ class RouteNamed{
   static const String onBoardingPage = 'OnBoardingPage';
   static const String notificationPage = 'notificationPage';
   static const String foodCategoryPage = 'foodCategoryPage';
-  static const String restaurantPage = 'restaurantPage';
+  static const String restaurantListPage = 'restaurantListPage';
   static const String happyDealsPage = 'happyDealsPage';
   static const String loginPage = 'loginPage';
   static const String signUpPage = 'signUpPage';
@@ -17,4 +17,5 @@ class RouteNamed{
   static const String reservationHistoryPage = 'reservationHistoryPage';
   static const String reviewPage = 'reviewPage';
   static const String happyDealDetailPage = 'happyDealDetailPage';
+  static const String restaurantPage = 'restaurantPage';
 }

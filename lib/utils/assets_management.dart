@@ -10,6 +10,12 @@ class AssetsManagement{
 
   //icons
   static String editLogo = '$icons/edit.png';
+  static String locationIcon = '$icons/location.png';
+  static String calendarIcon = '$icons/calendar.png';
+  static String userIcon = '$icons/user.png';
+  static String timeIcon = '$icons/time.png';
+  static String editFillIcon = '$icons/edit_fill.png';
+  static String cashIcon = '$icons/cash.png';
 
   //logos
   static String logoWithText = '$logos/logo_with_text.png';
@@ -25,7 +31,12 @@ class AssetsManagement{
   static String avatar = '$images/avatar.png';
   static String aboutUsBg = '$images/about_us_bg.jpg';
   static String cocaCola = '$images/coca_cola.png';
+  static String itemExample01 = '$images/image_expand_01.png';
   static String itemExample05 = '$images/image_example_05.png';
   static String intro01 = '$images/intro_01.png';
   static String intro02 = '$images/intro_02.png';
+  static String food01 = '$images/food_01.png';
+  static String food02 = '$images/food_02.png';
+  static String food03 = '$images/food_03.png';
+  static String food04 = '$images/food_04.png';
 }
