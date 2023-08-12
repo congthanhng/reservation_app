@@ -2,13 +2,15 @@ import 'package:flutter/material.dart';
 import 'package:reservation_app/utils/assets_management.dart';
 
 class PaymentsSection extends StatelessWidget {
-  const PaymentsSection({Key? key}) : super(key: key);
+  const PaymentsSection({Key? key, this.bgColor}) : super(key: key);
+
+  final Color? bgColor;
 
   @override
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
-        color: const Color(0xFFF6EFE8),
+        color: bgColor ?? const Color(0xFFF6EFE8),
         borderRadius: BorderRadius.circular(10),
       ),
       child: Padding(

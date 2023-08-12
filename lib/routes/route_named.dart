@@ -18,4 +18,6 @@ class RouteNamed{
   static const String reviewPage = 'reviewPage';
   static const String happyDealDetailPage = 'happyDealDetailPage';
   static const String restaurantPage = 'restaurantPage';
+  static const String happyDealReservePage = 'happyDealReservePage';
+  static const String reservationInDetailPage = 'reservationInDetailPage';
 }

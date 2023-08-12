@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:reservation_app/routes/route_named.dart';
 import 'package:reservation_app/utils/assets_management.dart';
 
 class TermConditionBox extends StatefulWidget {
@@ -179,7 +180,9 @@ class _TermConditionBoxState extends State<TermConditionBox>
                           MaterialStateProperty.all(const Color(0xFFAD3F32)),
                       textStyle: MaterialStateProperty.all(const TextStyle(
                           fontSize: 20, fontWeight: FontWeight.w700))),
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.pushNamed(context, RouteNamed.happyDealReservePage);
+                  },
                   child: const Text('GET IT NOW'),
                 ),
               )

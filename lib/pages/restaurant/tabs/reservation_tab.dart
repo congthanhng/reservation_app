@@ -20,23 +20,6 @@ class _ReservationTabState extends State<ReservationTab> {
   Province? _province;
   bool _isChecked = false;
 
-  final List<DayTimeWeek> _listDay = [
-    DayTimeWeek(th: 'MO', date: '23'),
-    DayTimeWeek(
-      th: 'TU',
-      date: ' 24',
-    ),
-    DayTimeWeek(
-      th: 'WE',
-      date: ' 25',
-    ),
-    DayTimeWeek(th: 'TH', date: ' 26'),
-    DayTimeWeek(
-      th: 'FR',
-      date: ' 27',
-    ),
-  ];
-
   @override
   Widget build(BuildContext context) {
     return Column(

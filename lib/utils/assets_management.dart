@@ -16,6 +16,7 @@ class AssetsManagement{
   static String timeIcon = '$icons/time.png';
   static String editFillIcon = '$icons/edit_fill.png';
   static String cashIcon = '$icons/cash.png';
+  static String checkRoundFill = '$icons/check_round_fill.png';
 
   //logos
   static String logoWithText = '$logos/logo_with_text.png';

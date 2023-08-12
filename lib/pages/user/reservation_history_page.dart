@@ -17,11 +17,11 @@ class _ReservationHistoryPageState extends State<ReservationHistoryPage> {
       Navigator.pushNamed(context, RouteNamed.reviewPage,
           arguments: reservation);
     } else {
-      ScaffoldMessenger.of(context)
-          .showSnackBar(const SnackBar(
-        content:
-        Text('You must finish the reservation before reviewing'),
-      ));
+      Navigator.pushNamed(context, RouteNamed.reservationInDetailPage,
+          arguments: reservation);
+      // ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
+      //   content: Text('You must finish the reservation before reviewing'),
+      // ));
     }
   }
 
@@ -104,9 +104,9 @@ class _ReservationHistoryPageState extends State<ReservationHistoryPage> {
                                     top: 8, bottom: 8, right: 16),
                                 child: Column(
                                   crossAxisAlignment:
-                                  CrossAxisAlignment.stretch,
+                                      CrossAxisAlignment.stretch,
                                   mainAxisAlignment:
-                                  MainAxisAlignment.spaceBetween,
+                                      MainAxisAlignment.spaceBetween,
                                   children: [
                                     //widget 2.1
                                     Text(

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:reservation_app/data/food_info_model.dart';
+import 'package:reservation_app/routes/route_named.dart';
 import 'package:reservation_app/utils/app_color.dart';
 import 'package:reservation_app/utils/app_distance.dart';
 
@@ -53,7 +54,9 @@ class FoodItemWidget extends StatelessWidget {
           Padding(
             padding: EdgeInsets.all(Dt.d_8),
             child: ElevatedButton(
-              onPressed: () {},
+              onPressed: () {
+                Navigator.pushNamed(context, RouteNamed.restaurantPage);
+              },
               style: ButtonStyle(
                   backgroundColor:
                       MaterialStateProperty.all(const Color(0xFFAD3F32))),

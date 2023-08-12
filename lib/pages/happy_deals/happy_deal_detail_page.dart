@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:reservation_app/pages/happy_deals/components/deal_title.dart';
 import 'package:reservation_app/pages/happy_deals/components/drink_shaking.dart';
 import 'package:reservation_app/pages/happy_deals/components/food_scaling.dart';
 import 'package:reservation_app/pages/happy_deals/components/term_condition_box.dart';
@@ -72,40 +73,7 @@ class _HappyDealDetailPageState extends State<HappyDealDetailPage>
         child: SafeArea(
           child: Column(
             children: [
-              SizedBox(
-                height: kToolbarHeight,
-                child: Row(
-                  children: [
-                    const SizedBox(
-                      width: 28,
-                    ),
-                    InkWell(
-                      onTap: () => Navigator.pop(context),
-                      child: Container(
-                        decoration: BoxDecoration(
-                          color: Colors.grey[200]?.withOpacity(0.5),
-                          borderRadius: BorderRadius.circular(20),
-                        ),
-                        child: const Icon(
-                          Icons.keyboard_arrow_left_outlined,
-                          color: Colors.white,
-                          size: 36,
-                        ),
-                      ),
-                    ),
-                    const SizedBox(
-                      width: 12,
-                    ),
-                    const Text(
-                      'Laaarge Discounts',
-                      style: TextStyle(
-                          fontSize: 30,
-                          color: Colors.white,
-                          fontWeight: FontWeight.w700),
-                    ),
-                  ],
-                ),
-              ),
+              const DealTitle(),
               Stack(
                 alignment: Alignment.centerRight,
                 children: [

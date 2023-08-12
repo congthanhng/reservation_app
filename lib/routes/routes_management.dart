@@ -8,7 +8,8 @@ import 'package:reservation_app/pages/authentication/login_page.dart';
 import 'package:reservation_app/pages/authentication/notify_save_success_page.dart';
 import 'package:reservation_app/pages/authentication/sign_up_page.dart';
 import 'package:reservation_app/pages/food_caterory/food_caterory_page.dart';
-import 'package:reservation_app/pages/happy_deals/happy_deal_detail.dart';
+import 'package:reservation_app/pages/happy_deals/happy_deal_detail_page.dart';
+import 'package:reservation_app/pages/happy_deals/happy_deal_reserve_page.dart';
 import 'package:reservation_app/pages/happy_deals/happy_deals_page.dart';
 import 'package:reservation_app/pages/home/homge_page.dart';
 import 'package:reservation_app/pages/not_found/not_found_page.dart';
@@ -19,6 +20,7 @@ import 'package:reservation_app/pages/restaurant/restaurant_page.dart';
 import 'package:reservation_app/pages/user/change_password_page.dart';
 import 'package:reservation_app/pages/user/profile_page.dart';
 import 'package:reservation_app/pages/user/reservation_history_page.dart';
+import 'package:reservation_app/pages/user/reservation_in_detail_page.dart';
 import 'package:reservation_app/pages/user/review_page.dart';
 import 'package:reservation_app/routes/route_named.dart';
 
@@ -138,6 +140,20 @@ class RouteManager {
         {
           return MaterialPageRoute(
             builder: (context) => RestaurantPage(),
+          );
+        }
+      case RouteNamed.happyDealReservePage:
+        {
+          return MaterialPageRoute(
+            builder: (context) => const HappyDealReservePage(),
+          );
+        }
+      case RouteNamed.reservationInDetailPage:
+        {
+          var arg = settings.arguments as ReservationModel?;
+          return MaterialPageRoute(
+            builder: (context) =>
+                ReservationInDetailPage(reservationModel: arg),
           );
         }
       default:
